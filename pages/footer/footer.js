@@ -1,3 +1,4 @@
+import Link from 'next/link'
 export default function Footer() {
   return (
     <div dir="rtl">
@@ -73,9 +74,9 @@ export default function Footer() {
           style={{ "background-color": "rgba(0, 0, 0, 0.2)" }}
         >
           © 2023 Copyright:
-          <a className="text-white" href="https://mdbootstrap.com/">
+          <Link className="text-white" href="https://mdbootstrap.com/">
             funny-movie.com
-          </a>
+          </Link>
         </div>
         {/* Copyright */}
       </footer>

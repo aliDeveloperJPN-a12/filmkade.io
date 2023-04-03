@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import classes from "./productid.module.css";
@@ -350,18 +351,20 @@ export default function id() {
         {/* ------------------------------------------------------------- */}
         <div className="movie-card mt-5" style={{ height: "900px" }}>
           <div className="container with" style={{ height: "800px" }}>
-            <a href="#">
-              <img
-                style={{
-                  width: "200px",
-                  height: "300px",
-                  borderRadius: "10px",
-                }}
-                src={data ? data.src : null}
-                alt="cover"
-                className={`cover ${classes.shadow}`}
-              />
-            </a>
+            <Link href="#">
+              <picture>
+                <img
+                  style={{
+                    width: "200px",
+                    height: "300px",
+                    borderRadius: "10px",
+                  }}
+                  src={data ? data.src : null}
+                  alt="cover"
+                  className={`cover ${classes.shadow}`}
+                />
+              </picture>
+            </Link>
             <div className="hero">
               <div className="details">
                 <div className="title1">{data ? data.title : null}</div>
@@ -494,24 +497,30 @@ export default function id() {
               <div className="column2">
                 <p dir="rtl">{data ? data.description : null}</p>
                 <div className="avatars">
-                  <a href="#" data-tooltip="Person 1" data-placement="top">
-                    <img
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png"
-                      alt="avatar1"
-                    />
-                  </a>
-                  <a href="#" data-tooltip="Person 2" data-placement="top">
-                    <img
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar2.png"
-                      alt="avatar2"
-                    />
-                  </a>
-                  <a href="#" data-tooltip="Person 3" data-placement="top">
-                    <img
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png"
-                      alt="avatar3"
-                    />
-                  </a>
+                  <Link href="#" data-tooltip="Person 1" data-placement="top">
+                    <picture>
+                      <img
+                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png"
+                        alt="avatar1"
+                      />
+                    </picture>
+                  </Link>
+                  <Link href="#" data-tooltip="Person 2" data-placement="top">
+                    <picture>
+                      <img
+                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar2.png"
+                        alt="avatar2"
+                      />
+                    </picture>
+                  </Link>
+                  <Link href="#" data-tooltip="Person 3" data-placement="top">
+                    <picture>
+                      <img
+                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png"
+                        alt="avatar3"
+                      />
+                    </picture>
+                  </Link>
                 </div>{" "}
                 {/* end avatars */}
               </div>{" "}
@@ -540,11 +549,6 @@ export default function id() {
             >
               <div className="coment-bottom bg-white p-2 px-4">
                 <div className="d-flex flex-row add-comment-section mt-4 mb-4">
-                  <img
-                    className="img-fluid img-responsive rounded-circle mr-2"
-                    src="https://i.imgur.com/qdiP4DB.jpg"
-                    width={38}
-                  />
                   <input
                     type="text"
                     className="form-control mr-3"

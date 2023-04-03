@@ -1,7 +1,9 @@
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import SpinnerLoading from "../SpinnerLoading/SpinnerLoading";
+
 function Profile() {
   let [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -32,12 +34,16 @@ function Profile() {
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex flex-column align-items-center text-center">
-                      <img
-                        src="https://alideveloperjpn-a12.github.io/privateProfile/images/avatar.jpg"
-                        alt="Admin"
-                        className="rounded-circle"
-                        width={150}
-                      />
+                      
+                      <picture>
+                        <img
+                          src="https://alideveloperjpn-a12.github.io/privateProfile/images/avatar.jpg"
+                          alt="Admin"
+                          className="rounded-circle"
+                          width={150}
+
+                        />
+                      </picture>
                       <div className="mt-3">
                         <h4>Ali Ghane Fard</h4>
                         <p className="text-secondary mb-1">
@@ -75,9 +81,9 @@ function Profile() {
                         Website
                       </h6>
                       <span className="text-secondary">
-                        <a href="https://alideveloperjpn-a12.github.io/privateProfile/">
+                        <Link href="https://alideveloperjpn-a12.github.io/privateProfile/">
                           https://alideveloperjpn-a12.github.io/privateProfile/
-                        </a>
+                        </Link>
                       </span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -99,9 +105,9 @@ function Profile() {
                         Github
                       </h6>
                       <span className="text-secondary">
-                        <a href="https://github.com/aliDeveloperJPN-a12">
+                        <Link href="https://github.com/aliDeveloperJPN-a12">
                           https://github.com/aliDeveloperJPN-a12
-                        </a>
+                        </Link>
                       </span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -123,9 +129,9 @@ function Profile() {
                         Twitter
                       </h6>
                       <span className="text-secondary">
-                        <a href="https://twitter.com/alighan42804476">
+                        <Link href="https://twitter.com/alighan42804476">
                           https://twitter.com/alighan42804476
-                        </a>
+                        </Link>
                       </span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -156,9 +162,9 @@ function Profile() {
                         Instagram
                       </h6>
                       <span className="text-secondary">
-                        <a href="https://www.instagram.com/ag062062zero/">
+                        <Link href="https://www.instagram.com/ag062062zero/">
                           https://www.instagram.com/ag062062zero/
-                        </a>
+                        </Link>
                       </span>
                     </li>
                   </ul>

@@ -1,5 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Link from 'next/link'
+import Image from 'next/image'
+
 
 // importing aos
 import AOS from 'aos';
@@ -75,22 +78,26 @@ export default function Products() {
             ? data.map((item) => (
                 <div style={{ margin: "10px" }} key={item.id}>
                   <div className="card" style={{ width: "18rem" }} dir="rtl">
+                  <picture>
                     <img
                       src={item.src}
                       className="card-img-top"
                       alt="..."
                       style={{ width: "286px", height: "200px" }}
+                      width={500}
+                      height={500}
                     />
+                             </picture>
                     <div className="card-body">
                       <h5 className="card-title">{item.title}</h5>
                       <p className="card-text">{item.description}</p>
                       <p>{item.duration}</p>
-                      <a
+                      <Link
                         href={`/productId/${item.id}`}
                         className="btn btn-dark"
                       >
                         دیدن
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

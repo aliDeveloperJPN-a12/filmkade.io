@@ -1,3 +1,4 @@
+import Link from "next/link";
 function Navbar() {
   return (
     <div dir="rtl">
@@ -31,19 +32,21 @@ function Navbar() {
         <div className="container-fluid">
           {/* logo search */}
           <div class="col-auto"></div>
-          <a href="#" className="a">
-            <img src="https://img.icons8.com/ios/30/FFFFFF/search--v1.png" />
-          </a>
+          <Link href="#" className="a">
+            <picture>
+              <img src="https://img.icons8.com/ios/30/FFFFFF/search--v1.png" />
+            </picture>
+          </Link>
           <input
-          style={{width:"300px",marginRight:"10px",borderRadius:"5px"}}
+            style={{ width: "300px", marginRight: "10px", borderRadius: "5px" }}
             type="password"
             id="inputPassword6"
             class="form-control"
             aria-describedby="passwordHelpInline"
           />
-          <a className="navbar-brand text-light a" href="/">
+          <Link className="navbar-brand text-light a" href="/">
             Funny-Movie.com
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -57,57 +60,72 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a
+              <Link
                 className="nav-link active text-light a"
                 aria-current="page"
                 href="/"
               >
                 خانه
-              </a>
-              <a className="nav-link text-light a" href="#">
+              </Link>
+              <Link className="nav-link text-light a" href="#">
                 جدیدترین ها
-              </a>
-              <a className="nav-link text-light a" href="#">
+              </Link>
+              <Link className="nav-link text-light a" href="#">
                 اخبار داغ
-              </a>
-              <a className="nav-link text-light a" href="/profile/profile">
+              </Link>
+              <Link className="nav-link text-light a" href="/profile/profile">
                 تماس با من
-              </a>
+              </Link>
             </div>
           </div>
         </div>
         <div style={{ width: "250px", paddingLeft: "10px" }} className="t">
-          <a href="#" style={{ textDecoration: "none" }}>
+          <Link href="#" style={{ textDecoration: "none" }}>
             {" "}
+            <picture>
             <img
               src="https://img.icons8.com/ios/25/FFFFFF/instagram.png"
               style={{ marginLeft: "10px" }}
+
             />
-          </a>
-          <a href="#" style={{ textDecoration: "none" }}>
+            </picture>
+          </Link>
+          <Link href="#" style={{ textDecoration: "none" }}>
             {" "}
-            <img
-              src="https://img.icons8.com/ios/25/FFFFFF/telegram-app.png"
-              style={{ marginLeft: "10px" }}
-            />
-          </a>
-          <a href="#" style={{ textDecoration: "none" }}>
+            <picture>
+              <img
+                src="https://img.icons8.com/ios/25/FFFFFF/telegram-app.png"
+                style={{ marginLeft: "10px" }}
+              />
+            </picture>
+          </Link>
+          <Link href="#" style={{ textDecoration: "none" }}>
             {" "}
-            <img
-              src="https://img.icons8.com/ios/25/FFFFFF/twitter--v1.png"
-              style={{ marginLeft: "10px" }}
-            />
-          </a>
-          <a href="#" style={{ textDecoration: "none" }}>
+            <picture>
+              <img
+                src="https://img.icons8.com/ios/25/FFFFFF/twitter--v1.png"
+                style={{ marginLeft: "10px" }}
+              />
+            </picture>
+          </Link>
+          <Link href="#" style={{ textDecoration: "none" }}>
             {" "}
+            <picture>
             <img
               src="https://img.icons8.com/ios/25/FFFFFF/github--v1.png"
               style={{ marginLeft: "10px" }}
+ 
             />
-          </a>
-          <a href="#" style={{ textDecoration: "none" }}>
-            <img src="https://img.icons8.com/ios/25/FFFFFF/linkedin.png" />
-          </a>
+            </picture>
+          </Link>
+          <Link href="#" style={{ textDecoration: "none" }}>
+          <picture>
+            <img
+              src="https://img.icons8.com/ios/25/FFFFFF/linkedin.png"
+   
+            />
+        </picture>
+          </Link>
         </div>
       </nav>
       {/* ----------------------------- navbar ------------------------------ */}

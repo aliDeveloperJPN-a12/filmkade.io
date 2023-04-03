@@ -1,8 +1,9 @@
+import Link from "next/link";
 import axios from "axios";
 import { useEffect, useState } from "react";
 // importing aos
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Newproducts() {
   const [data, setData] = useState(null);
@@ -12,7 +13,7 @@ export default function Newproducts() {
       setData(res.data);
     });
   }, []);
-  
+
   return (
     <div dir="rtl">
       <style jsx>{`
@@ -72,19 +73,24 @@ export default function Newproducts() {
             ? data.map((item) => (
                 <div style={{ margin: "10px" }} key={item.id}>
                   <div className="card" style={{ width: "18rem" }} dir="rtl">
-                    <img
-                      src={item.src}
-                      className="card-img-top"
-                      alt="..."
-                      style={{ width: "286px", height: "200px" }}
-                    />
+                    <picture>
+                      <img
+                        src={item.src}
+                        className="card-img-top"
+                        alt="..."
+                        style={{ width: "286px", height: "200px" }}
+                      />
+                    </picture>
                     <div className="card-body">
                       <h5 className="card-title">{item.title}</h5>
                       <p className="card-text">{item.description}</p>
                       <p>{item.duration}</p>
-                      <a href={`/productId/${item.id}`}  className="btn btn-dark">
+                      <Link
+                        href={`/productId/${item.id}`}
+                        className="btn btn-dark"
+                      >
                         دیدن
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
