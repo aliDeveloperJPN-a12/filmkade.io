@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import classes from "./productid.module.css";
 import axios from "axios";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
@@ -12,6 +11,13 @@ export default function Id() {
   const [data, setData] = useState(null);
   let [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    if (Id) {
+      // get products
+      axios.get("/api/product").then((res) => {
+        // find product of products
+        setData(res.data.find((item) => item.id == Id));
+      });
+    }
     // time sleep for sppiner
     function sleep(time) {
       return new Promise((resolve) => setTimeout(resolve, time));
@@ -19,19 +25,6 @@ export default function Id() {
     sleep(1500).then(() => {
       setIsLoading(true);
     });
-
-    if (Id <= 8) {
-      // get products
-      axios.get("/api/product").then((res) => {
-        // find product of products
-        setData(res.data.find((item) => item.id == Id));
-      });
-    } else {
-      axios.get("/api/newproducts").then((res) => {
-        // find product of products
-        setData(res.data.find((item) => item.id == Id));
-      });
-    }
     // dependence set on "id"
   }, [Id]);
   let content = <SpinnerLoading />;
@@ -151,7 +144,6 @@ export default function Id() {
             z-index: 1;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
-            
           }
           .hero:before {
             content: "";
@@ -161,8 +153,7 @@ export default function Id() {
             overflow: hidden;
             top: 0;
             left: 0;
-            
-            
+
             background-size: cover;
             z-index: -1;
             transform: skewY(-2.2deg);
@@ -352,8 +343,13 @@ export default function Id() {
         {/* ------------------------------------------------------------- */}
         <div className="movie-card mt-5" style={{ height: "900px" }}>
           <div className="container with" style={{ height: "800px" }}>
-
-            <div className="hero" style={{backgroundImage:`url(${data ? data.src : null})`,backgroundSize:"cover"}}>
+            <div
+              className="hero"
+              style={{
+                backgroundImage: `url(${data ? data.src : null})`,
+                backgroundSize: "cover",
+              }}
+            >
               <div className="details">
                 <div className="title1">{data ? data.title : null}</div>
                 <div className="title2"></div>
