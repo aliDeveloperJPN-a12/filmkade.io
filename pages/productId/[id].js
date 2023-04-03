@@ -352,20 +352,7 @@ export default function Id() {
         {/* ------------------------------------------------------------- */}
         <div className="movie-card mt-5" style={{ height: "900px" }}>
           <div className="container with" style={{ height: "800px" }}>
-            <Link href="#">
-              <picture>
-                <img
-                  style={{
-                    width: "200px",
-                    height: "300px",
-                    borderRadius: "10px",
-                  }}
-                  src={data ? data.src : null}
-                  alt="cover"
-                  className={`cover ${classes.shadow}`}
-                />
-              </picture>
-            </Link>
+
             <div className="hero" style={{backgroundImage:`url(${data ? data.src : null})`,backgroundSize:"cover"}}>
               <div className="details">
                 <div className="title1">{data ? data.title : null}</div>
