@@ -8,7 +8,7 @@ import Footer from "../footer/footer";
 import SpinnerLoading from "../SpinnerLoading/SpinnerLoading";
 export default function id() {
   const router = useRouter();
-  const { id } = router.query;
+  const { Id } = router.query;
   const [data, setData] = useState(null);
   let [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -20,20 +20,20 @@ export default function id() {
       setIsLoading(true);
     });
 
-    if (id <= 8) {
+    if (Id <= 8) {
       // get products
       axios.get("/api/product").then((res) => {
         // find product of products
-        setData(res.data.find((item) => item.id == id));
+        setData(res.data.find((item) => item.id == Id));
       });
     } else {
       axios.get("/api/newproducts").then((res) => {
         // find product of products
-        setData(res.data.find((item) => item.id == id));
+        setData(res.data.find((item) => item.id == Id));
       });
     }
     // dependence set on "id"
-  }, [id]);
+  }, [Id]);
   let content = <SpinnerLoading />;
   if (isLoading) {
     content = (
