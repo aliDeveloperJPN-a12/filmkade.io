@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(104, 100, 100);
+  font-family: "Vazir";
+  font-size: 11px;
+}
+@font-face {
+  font-family: "Vazir";
+  src: url(../pages/fonts/Vazir-Thin.eot);
+  src: url(../pages/fonts/Vazir-Thin.eot) format("embedded-opentype"),
+    url(../pages/fonts/Vazir-Thin.woff2) format("woff2"),
+    url(../pages/fonts/Vazir-Thin.woff) format("woff"),
+    url(../pages/fonts/Vazir-Thin.ttf) format("truetype");
+  font-weight: 100;
+}
