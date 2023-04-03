@@ -6,7 +6,7 @@ import axios from "axios";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import SpinnerLoading from "../SpinnerLoading/SpinnerLoading";
-export default function id() {
+export default function Id() {
   const router = useRouter();
   const { Id } = router.query;
   const [data, setData] = useState(null);
