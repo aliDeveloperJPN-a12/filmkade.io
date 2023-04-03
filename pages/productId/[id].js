@@ -346,7 +346,7 @@ export default function Id() {
             <div
               className="hero"
               style={{
-                backgroundImage: `url(${data ? data.src : null})`,
+                backgroundImage: `url("https://blog.playstation.com/tachyon/2022/06/0c3c20a8d8514501524a0859461f391572ea6e61.jpg")`,
                 backgroundSize: "cover",
               }}
             >
